@@ -9,6 +9,8 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::livewire('/dashboard', 'dashboard')->name('dashboard');
+        Route::livewire('/barang-masuk', 'barang-masuk')->name('barang.masuk');
+    Route::livewire('/barang-keluar', 'barang-keluar')->name('barang.keluar');
 
     Route::post('/logout', function () {
         Auth::logout();

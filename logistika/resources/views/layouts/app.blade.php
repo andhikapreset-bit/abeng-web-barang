@@ -14,8 +14,8 @@
         'OPERASIONAL' => [
             ['Dasbor', 'dashboard', 'dasbor', null],
             ['Inventaris barang', '#', 'cube', null],
-            ['Barang masuk', '#', 'masuk', null],
-            ['Barang keluar', '#', 'keluar', null],
+            ['Barang masuk', 'barang.masuk', 'masuk', null],
+        ['Barang keluar', 'barang.keluar', 'keluar', null], 
             ['Mutasi gudang', '#', 'mutasi', null],
             ['Stok opname', '#', 'opname', null],
         ],
