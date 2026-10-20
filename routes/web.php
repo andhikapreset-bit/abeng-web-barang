@@ -1,22 +1,15 @@
 <?php
 
+use App\Livewire\Auth\Login;
+use App\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
-use Livewire\Volt\Volt;
 
+// Route::get('/login', Login::class)->name('login');
+
+// Halaman Dashboard Utama
+Route::get('/dashboard', Dashboard::class)->name('dashboard');
+
+// Redirect halaman utama ke login
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
-
-    Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
-    Volt::route('settings/password', 'settings.password')->name('settings.password');
-    Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
+    return redirect()->route('login');
 });
-
-require __DIR__.'/auth.php';
